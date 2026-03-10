@@ -17,7 +17,8 @@ x-backend-defaults: &backend-defaults
       condition: service_healthy
     redis:
       condition: service_healthy
-
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
   command: sleep infinity
   restart: unless-stopped
 
